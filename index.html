@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <!-- Configurações básicas de metadados e responsividade -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrassom, Ultrassom e Suas Aplicações Tecnológicas e Médicas</title>
+
+  <!-- Importação da fonte tipográfica Inter para legibilidade acadêmica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Carregamento do Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuração de tema do Tailwind para aplicar a fonte Inter e paleta personalizada -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#060f1e',
+              900: '#0b192c',
+              800: '#132744',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- Cabeçalho Científico e Acústico -->
+  <header id="topo" class="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-slate-900 text-white border-b border-cyan-500/20">
+    <!-- Elemento decorativo SVG representando ondas acústicas longitudinais -->
+    <div class="pointer-events-none absolute inset-0 opacity-15" aria-hidden="true">
+      <svg class="h-full w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="none" stroke="#06b6d4" stroke-width="2" d="M0,160 C240,60 480,260 720,160 C960,60 1200,260 1440,160" />
+        <path fill="none" stroke="#38bdf8" stroke-width="1.5" d="M0,190 C240,90 480,290 720,190 C960,90 1200,290 1440,190" />
+        <path fill="none" stroke="#94a3b8" stroke-width="1" d="M0,130 C240,30 480,230 720,130 C960,30 1200,230 1440,130" />
+      </svg>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <!-- Etiqueta superior acadêmica -->
+      <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-cyan-300 mb-6">
+        <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>Física • Estudo de Ondulatória e Acústica</span>
+      </div>
+
+      <!-- Título Principal -->
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-4xl">
+        INFRASSOM, ULTRASSOM E SUAS APLICAÇÕES TECNOLÓGICAS E MÉDICAS
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="mt-4 text-base sm:text-xl font-normal text-cyan-200/90 max-w-3xl leading-relaxed">
+        Um Estudo das Ondas Mecânicas Além da Percepção Humana
+      </p>
+
+      <!-- Barra de Identificação dos Autores e Ação de Impressão -->
+      <div class="mt-8 pt-6 border-t border-slate-700/70 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-3.5">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 border border-cyan-400/30 text-cyan-300">
+            <!-- Ícone acadêmico SVG -->
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Autores</span>
+            <p class="text-sm sm:text-base font-medium text-slate-100">
+              Gabriel Ferreira Lopes da Trindade, Murilo Miranda
+            </p>
+          </div>
+        </div>
+
+        <!-- Botão utilitário para impressão/exportação do trabalho escolar -->
+        <button
+          type="button"
+          onclick="window.print()"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800/90 hover:bg-cyan-600 text-slate-200 hover:text-white border border-slate-600/80 hover:border-cyan-400 px-4 py-2.5 text-sm font-medium transition-colors duration-200 cursor-pointer self-start sm:self-auto"
+          title="Imprimir ou salvar este trabalho em PDF"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+          <span>Imprimir Trabalho</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Sumário e Navegação Rápida Fixa -->
+  <nav aria-label="Sumário de navegação rápida" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-2.5 overflow-x-auto no-scrollbar gap-2">
+        <span class="hidden md:inline-block text-xs font-bold uppercase tracking-wider text-slate-400 mr-2 shrink-0">
+          Sumário:
+        </span>
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <a href="#introducao" class="shrink-0 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:bg-navy-900 hover:text-cyan-300 transition-colors">
+            1. Introdução
+          </a>
+          <a href="#conceitos-basicos" class="shrink-0 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:bg-navy-900 hover:text-cyan-300 transition-colors">
+            Grandezas Físicas
+          </a>
+          <a href="#desenvolvimento" class="shrink-0 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:bg-navy-900 hover:text-cyan-300 transition-colors">
+            2. Fundamentação Teórica
+          </a>
+          <a href="#aplicacoes" class="shrink-0 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:bg-navy-900 hover:text-cyan-300 transition-colors">
+            3. Aplicações Práticas
+          </a>
+          <a href="#conclusao" class="shrink-0 rounded-lg px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:bg-navy-900 hover:text-cyan-300 transition-colors">
+            4. Conclusão
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal do Estudo -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 sm:space-y-14">
+
+    <!-- SEÇÃO 1: INTRODUÇÃO E CONCEITOS BÁSICOS DE ONDULATÓRIA -->
+    <section id="introducao" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-cyan-400 font-bold text-sm">
+          1
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
+          1. Introdução
+        </h2>
+      </div>
+
+      <!-- Texto introdutório integral -->
+      <div class="text-slate-700 text-base sm:text-[17px] leading-relaxed space-y-4">
+        <p>
+          O som é uma onda mecânica longitudinal que necessita de um meio material (sólido, líquido ou gasoso) para se propagar. Ele se origina a partir de vibrações que provocam variações periódicas na pressão do meio circundante, alternando entre regiões de compressão e rarefação. Embora o ser humano viva em um ambiente repleto de fenômenos sonoros, a sensibilidade do sistema auditivo humano está restrita a uma faixa específica de frequências. O estudo do infrassom e do ultrassom permite compreender fenômenos físicos e naturais que ocorrem fora da nossa percepção auditiva direta. Desde a comunicação de grandes mamíferos até diagnósticos médicos avançados e navegação marítima, o controle e a análise dessas faixas de frequência desempenham um papel fundamental no desenvolvimento tecnológico, científico e biológico.
+        </p>
+      </div>
+
+      <!-- Subseção: Conexão com os Conceitos Básicos de Ondulatória -->
+      <div id="conceitos-basicos" class="scroll-mt-24 mt-10 pt-8 border-t border-slate-200">
+        <h3 class="text-lg sm:text-xl font-bold text-navy-900 mb-3">
+          Conexão com os Conceitos Básicos de Ondulatória
+        </h3>
+        <p class="text-slate-700 text-base leading-relaxed mb-6">
+          Para fundamentar o estudo do infra e do ultrassom, é essencial definir as grandezas físicas fundamentais das ondas mecânicas:
+        </p>
+
+        <!-- Grade responsiva de Cards para as 4 Grandezas Físicas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 1: Frequência (f) -->
+          <article class="rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-cyan-500/60 p-5 sm:p-6 transition-all duration-200 shadow-xs">
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <h4 class="text-base sm:text-lg font-bold text-navy-900">
+                Frequência (f)
+              </h4>
+              <span class="inline-flex items-center rounded-lg bg-cyan-500/15 text-cyan-800 border border-cyan-500/30 px-2.5 py-1 text-xs font-bold">
+                SI: Hertz (Hz)
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+              Representa o número de oscilações ou ciclos completos executados pela onda por unidade de tempo. Sua unidade no Sistema Internacional (SI) é o Hertz (Hz), onde 1 Hz equivale a 1 ciclo por segundo. A frequência é o parâmetro que determina a altura do som (sons graves possuem frequências baixas, enquanto sons agudos possuem frequências elevadas).
+            </p>
+          </article>
+
+          <!-- Card 2: Comprimento de Onda (λ) -->
+          <article class="rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-cyan-500/60 p-5 sm:p-6 transition-all duration-200 shadow-xs">
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <h4 class="text-base sm:text-lg font-bold text-navy-900">
+                Comprimento de Onda (λ)
+              </h4>
+              <span class="inline-flex items-center rounded-lg bg-blue-500/15 text-blue-900 border border-blue-500/30 px-2.5 py-1 text-xs font-bold">
+                SI: metro (m)
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+              É a distância física entre dois pontos consecutivos que estão na mesma fase de oscilação, como duas cristas ou dois vales consecutivos (ou duas zonas de compressão máxima). Sua unidade no SI é o metro (m).
+            </p>
+          </article>
+
+          <!-- Card 3: Velocidade de Propagação (v) -->
+          <article class="rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-cyan-500/60 p-5 sm:p-6 transition-all duration-200 shadow-xs">
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <h4 class="text-base sm:text-lg font-bold text-navy-900">
+                Velocidade de Propagação (v)
+              </h4>
+              <span class="inline-flex items-center rounded-lg bg-slate-700/10 text-slate-800 border border-slate-400/40 px-2.5 py-1 text-xs font-bold">
+                Ar (20 °C): ~343 m/s
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+              É a taxa com que a perturbação se desloca pelo meio. A velocidade do som depende fundamentalmente das propriedades físicas do meio em que se propaga, como a elasticidade e a densidade, além da temperatura. No ar, à temperatura de 20 °C, a velocidade do som é de aproximadamente 343 m/s. Em meios mais densos e rígidos, como a água ou o aço, a velocidade é consideravelmente maior.
+            </p>
+          </article>
+
+          <!-- Card 4: Período (T) -->
+          <article class="rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-cyan-500/60 p-5 sm:p-6 transition-all duration-200 shadow-xs">
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <h4 class="text-base sm:text-lg font-bold text-navy-900">
+                Período (T)
+              </h4>
+              <span class="inline-flex items-center rounded-lg bg-teal-500/15 text-teal-900 border border-teal-500/30 px-2.5 py-1 text-xs font-bold">
+                T = 1 / f
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+              É o tempo necessário para que um ciclo completo da onda ocorra. Matematicamente, é o inverso da frequência: <strong class="font-semibold text-navy-900">T = 1 / f</strong>.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: DESENVOLVIMENTO (FUNDAMENTAÇÃO TEÓRICA) -->
+    <section id="desenvolvimento" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-10 space-y-10">
+      <div class="flex items-center gap-3">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-cyan-400 font-bold text-sm">
+          2
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
+          2. Desenvolvimento (Fundamentação Teórica)
+        </h2>
+      </div>
+
+      <!-- Subseção 2.1: A Faixa de Audição Humana e os Limites Espectrais -->
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold text-navy-900 mb-3">
+          2.1. A Faixa de Audição Humana e os Limites Espectrais
+        </h3>
+        <p class="text-slate-700 text-base leading-relaxed mb-6">
+          O espectro acústico é dividido em três regiões principais de acordo com a capacidade auditiva da espécie humana:
+        </p>
+
+        <!-- Barra visual ilustrativa do espectro acústico -->
+        <div class="mb-6 rounded-2xl bg-slate-100 p-4 border border-slate-200" aria-hidden="true">
+          <div class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm font-semibold">
+            <div class="rounded-xl bg-indigo-950 text-indigo-200 py-2.5 px-2 border border-indigo-700/50">
+              <span class="block">Infrassom</span>
+              <span class="text-[11px] sm:text-xs font-normal text-indigo-300">f &lt; 20 Hz</span>
+            </div>
+            <div class="rounded-xl bg-cyan-600 text-white py-2.5 px-2 shadow-xs">
+              <span class="block">Som Audível</span>
+              <span class="text-[11px] sm:text-xs font-normal text-cyan-100">20 Hz – 20 kHz</span>
+            </div>
+            <div class="rounded-xl bg-navy-900 text-cyan-300 py-2.5 px-2 border border-cyan-500/40">
+              <span class="block">Ultrassom</span>
+              <span class="text-[11px] sm:text-xs font-normal text-slate-300">f &gt; 20 kHz</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabela Estilizada e Responsiva -->
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-navy-900 text-white text-xs sm:text-sm uppercase tracking-wider">
+                <th scope="col" class="py-4 px-4 sm:px-6 font-bold border-b border-slate-700">
+                  Região Espectral
+                </th>
+                <th scope="col" class="py-4 px-4 sm:px-6 font-bold border-b border-slate-700">
+                  Faixa de Frequência
+                </th>
+                <th scope="col" class="py-4 px-4 sm:px-6 font-bold border-b border-slate-700">
+                  Características Principais
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-sm sm:text-base bg-white">
+              <!-- Linha 1: Infrassom -->
+              <tr class="hover:bg-slate-50/90 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-bold text-navy-900 whitespace-nowrap align-top">
+                  <span class="inline-flex items-center gap-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-indigo-600"></span>
+                    Infrassom
+                  </span>
+                </td>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800 whitespace-nowrap align-top">
+                  Abaixo de 20 Hz (f &lt; 20 Hz)
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-slate-700 leading-relaxed">
+                  Inaudível para humanos. Grandes comprimentos de onda, baixa atenuação e capacidade de percorrer longas distâncias no meio material.
+                </td>
+              </tr>
+
+              <!-- Linha 2: Som Audível -->
+              <tr class="hover:bg-slate-50/90 transition-colors bg-cyan-50/30">
+                <td class="py-4 px-4 sm:px-6 font-bold text-cyan-900 whitespace-nowrap align-top">
+                  <span class="inline-flex items-center gap-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-cyan-500"></span>
+                    Som Audível
+                  </span>
+                </td>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800 whitespace-nowrap align-top">
+                  De 20 Hz a 20.000 Hz (20 kHz)
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-slate-700 leading-relaxed">
+                  Faixa captada pelo ouvido humano saudável. O limite superior tende a diminuir com a idade (presbiacusia).
+                </td>
+              </tr>
+
+              <!-- Linha 3: Ultrassom -->
+              <tr class="hover:bg-slate-50/90 transition-colors">
+                <td class="py-4 px-4 sm:px-6 font-bold text-navy-900 whitespace-nowrap align-top">
+                  <span class="inline-flex items-center gap-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-blue-600"></span>
+                    Ultrassom
+                  </span>
+                </td>
+                <td class="py-4 px-4 sm:px-6 font-semibold text-slate-800 whitespace-nowrap align-top">
+                  Acima de 20.000 Hz (f &gt; 20 kHz)
+                </td>
+                <td class="py-4 px-4 sm:px-6 text-slate-700 leading-relaxed">
+                  Inaudível para humanos. Pequenos comprimentos de onda, alta resolução espacial e maior atenuação em meios materiais.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Subseção 2.2: Equações Fundamentais da Ondulatória -->
+      <div class="pt-8 border-t border-slate-200">
+        <h3 class="text-lg sm:text-xl font-bold text-navy-900 mb-3">
+          2.2. Equações Fundamentais da Ondulatória
+        </h3>
+        <p class="text-slate-700 text-base leading-relaxed mb-6">
+          A relação fundamental que conecta a velocidade de propagação de uma onda à sua frequência e ao seu comprimento de onda é dada pela Equação Fundamental da Ondulatória:
+        </p>
+
+        <!-- Bloco Visual de Destaque para a Fórmula -->
+        <div class="my-6 rounded-2xl bg-gradient-to-br from-navy-950 via-navy-900 to-slate-800 text-white p-6 sm:p-8 border border-cyan-500/40 shadow-md">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <!-- Expressão Matemática em Destaque -->
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-white/5 border border-cyan-400/30 px-8 py-6 text-center shrink-0">
+              <span class="text-xs uppercase tracking-widest text-cyan-300 font-semibold mb-2">
+                Equação Fundamental
+              </span>
+              <div class="text-3xl sm:text-5xl font-extrabold tracking-wider text-white">
+                v = λ · f
+              </div>
+            </div>
+
+            <!-- Legenda das Grandezas -->
+            <div class="flex-1 space-y-2.5">
+              <p class="text-sm font-bold uppercase tracking-wider text-cyan-300">
+                Onde:
+              </p>
+              <ul class="space-y-2 text-sm sm:text-base text-slate-100">
+                <li class="flex items-start gap-2.5">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-cyan-500/20 text-cyan-300 font-bold text-sm">v</span>
+                  <span><strong class="text-white">v</strong> = Velocidade da onda (metros por segundo, m/s)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-cyan-500/20 text-cyan-300 font-bold text-sm">λ</span>
+                  <span><strong class="text-white">λ</strong> = Comprimento de onda (metros, m)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-cyan-500/20 text-cyan-300 font-bold text-sm">f</span>
+                  <span><strong class="text-white">f</strong> = Frequência da onda (Hertz, Hz)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-slate-700 text-base sm:text-[17px] leading-relaxed">
+          Como a velocidade de propagação (v) é constante em um meio homogêneo e sob condições fixas de temperatura e pressão, o comprimento de onda (λ) e a frequência (f) são grandezas inversamente proporcionais. Isso significa que sinais de infrassom (baixa frequência) possuem comprimentos de onda extremamente longos, enquanto sinais de ultrassom (alta frequência) possuem comprimentos de onda extremamente curtos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: APLICAÇÕES PRÁTICAS, FENÔMENOS NATURAIS E TECNOLÓGICOS -->
+    <section id="aplicacoes" class="scroll-mt-20 space-y-6">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-cyan-400 font-bold text-sm">
+            3
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
+            3. Aplicações Práticas, Fenômenos Naturais e Tecnológicos
+          </h2>
+        </div>
+      </div>
+
+      <!-- Grade de Cards Organizados para os 4 Tópicos de Aplicações -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Card 3.1: Infrassom: Fenômenos Naturais e Fauna -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-950 text-cyan-400">
+                <!-- Ícone SVG de ondas sísmicas/naturais -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h3l3-8 4 16 3-8h5" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-700">Baixa Frequência (&lt; 20 Hz)</span>
+                <h3 class="text-lg sm:text-xl font-bold text-navy-900">
+                  3.1. Infrassom: Fenômenos Naturais e Fauna
+                </h3>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-5">
+              Devido aos seus grandes comprimentos de onda, as ondas de infrassom sofrem pouca absorção pelo meio e conseguem contornar obstáculos com facilidade através da difração, propagando-se por dezenas ou centenas de quilômetros sem perder significativa energia.
+            </p>
+
+            <div class="space-y-4">
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Elefantes e Grandes Mamíferos
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Elefantes utilizam infrassons em frequências tão baixas quanto 14 Hz a 16 Hz para se comunicarem através de longas distâncias terrestres. Essas vibrações também são transmitidas pelo solo e detectadas através dos receptores nas patas dos animais.
+                </p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Eventos Geofísicos (Terremotos e Vulcões)
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  A movimentação de placas tectônicas, abalos sísmicos e erupções vulcânicas geram perturbações infrassônicas de altíssima energia. Estações globais de monitoramento utilizam sensores de infrassom para prever ou detectar tremores e erupções com antecedência.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3.2: Ultrassom na Medicina: Ultrassonografia -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-cyan-400">
+                <!-- Ícone SVG médico/diagnóstico -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-700">Diagnóstico Médico (1 MHz – 18 MHz)</span>
+                <h3 class="text-lg sm:text-xl font-bold text-navy-900">
+                  3.2. Ultrassom na Medicina: Ultrassonografia
+                </h3>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-5">
+              A medicina faz uso extensivo do ultrassom (com frequências tipicamente entre 1 MHz e 18 MHz) para diagnósticos não invasivos.
+            </p>
+
+            <div class="space-y-4">
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Princípio de Funcionamento
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Um transdutor contendo cristais piezoelétricos converte energia elétrica em pulsos de ultrassom. Esses pulsos são emitidos em direção ao corpo e refletidos parcialmente de volta (eco) ao encontrarem interfaces entre tecidos com diferentes impedâncias acústicas.
+                </p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Vantagens
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Diferente dos raios X, a ultrassonografia não utiliza radiação ionizante, sendo perfeitamente segura para o acompanhamento pré-natal, avaliação de órgãos abdominais, tecidos moles e fluxo sanguíneo (efeito Doppler).
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3.3: Ultrassom na Indústria e Navegação -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-5">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-cyan-400">
+                <!-- Ícone SVG de radar/sonar -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 4a6 6 0 106 6 6 6 0 00-6-6zm0 4a2 2 0 102 2 2 2 0 00-2-2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Engenharia e Oceanografia</span>
+                <h3 class="text-lg sm:text-xl font-bold text-navy-900">
+                  3.3. Ultrassom na Indústria e Navegação
+                </h3>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Sonares (Sound Navigation and Ranging)
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Equipamentos instalados em navios e submarinos que emitem pulsos de ultrassom na água para mapear a profundidade do oceano, detectar obstáculos ou localizar alvos submersos medindo o tempo de retorno do eco.
+                </p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Ensaios Não Destrutivos (END)
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Na engenharia de materiais, o ultrassom é utilizado para inspecionar peças metálicas, tubulações e estruturas de concreto sem danificá-las. A presença de microfissuras ou bolhas internas altera a reflexão da onda acústica, permitindo a identificação precisa de falhas estruturais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3.4: Ultrassom na Natureza: Ecolocalização -->
+        <article class="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-950 text-cyan-400">
+                <!-- Ícone SVG de emissão de ondas sonoras -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-700">Bioacústica (&gt; 20 kHz)</span>
+                <h3 class="text-lg sm:text-xl font-bold text-navy-900">
+                  3.4. Ultrassom na Natureza: Ecolocalização
+                </h3>
+              </div>
+            </div>
+
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-5">
+              Diversos animais desenvolveram biologicamente a capacidade de emitir pulsos de ultrassom e interpretar os ecos para "enxergar" o ambiente no escuro ou em águas turvas.
+            </p>
+
+            <div class="space-y-4">
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Morcegos
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Emitem pulsos ultrasonoros (frequências de 20 kHz a mais de 100 kHz) pela boca ou nariz e analisam o tempo de retorno e as variações de frequência para desviar de obstáculos e caçar insetos em pleno voo.
+                </p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/80 p-4">
+                <h4 class="font-bold text-navy-900 text-sm sm:text-base mb-1.5">
+                  Cetáceos (Golfinhos e Baleias)
+                </h4>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                  Golfinhos utilizam um órgão gorduroso na cabeça chamado "melão" para focar feixes de ultrassom na água, permitindo uma navegação tridimensional perfeita e caça em grupo com altíssima precisão.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: CONCLUSÃO -->
+    <section id="conclusao" class="scroll-mt-20 rounded-2xl bg-gradient-to-br from-navy-950 via-navy-900 to-slate-900 text-white p-6 sm:p-10 border border-cyan-500/30 shadow-md">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-bold text-sm">
+          4
+        </span>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          4. Conclusão
+        </h2>
+      </div>
+
+      <p class="text-slate-200 text-base sm:text-[17px] leading-relaxed">
+        O estudo das ondas mecânicas além do espectro audível humano demonstra o alcance da Física no entendimento do universo e na criação de soluções tecnológicas. Enquanto o infrassom se destaca pela capacidade de transportar informações através de grandes distâncias geográficas e naturais, o ultrassom se consolida como uma ferramenta essencial para a precisão diagnóstica médica, controle de qualidade industrial e sobrevivência biológica de diversas espécies.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Acadêmico -->
+  <footer class="border-t border-slate-200 bg-white mt-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <div class="text-center sm:text-left">
+        <p class="font-semibold text-navy-900">
+          INFRASSOM, ULTRASSOM E SUAS APLICAÇÕES TECNOLÓGICAS E MÉDICAS
+        </p>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">
+          Trabalho Escolar de Física • Autores: Gabriel Ferreira Lopes da Trindade, Murilo Miranda
+        </p>
+      </div>
+
+      <a
+        href="#topo"
+        class="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 hover:bg-navy-900 text-slate-700 hover:text-cyan-300 px-4 py-2 text-xs sm:text-sm font-medium transition-colors"
+      >
+        <span>Voltar ao topo</span>
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
